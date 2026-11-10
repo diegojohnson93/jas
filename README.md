@@ -10,6 +10,7 @@ Demo publicada: https://diegojohnson93.github.io/jas/
 ```
 index.html            Home
 experiencia.html      Los nueve proyectos, con ancla por caso
+alianza-dip.html      Alianza DIP y peritajes destacados
 assets/css/site.css   Estilos y animaciones
 assets/js/site.js     Cursor que sigue al mouse
 assets/img/           Logo (SVG) y fotos
@@ -30,6 +31,6 @@ Settings → Pages → Deploy from a branch → `main` / `(root)`.
 ## Notas
 
 - Los efectos de scroll usan `animation-timeline` (Chrome y Edge). En otros navegadores el contenido se ve completo, sin esas animaciones.
-- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa) y correo corporativo.
+- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa) correo corporativo, y descripción y logo de la alianza DIP.
 - El formulario de contacto es solo visual; no envía datos.
 - El logo es una reconstrucción vectorial a partir de una imagen de baja resolución.
