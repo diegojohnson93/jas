@@ -31,6 +31,6 @@ Settings → Pages → Deploy from a branch → `main` / `(root)`.
 ## Notas
 
 - Los efectos de scroll usan `animation-timeline` (Chrome y Edge). En otros navegadores el contenido se ve completo, sin esas animaciones.
-- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa) correo corporativo, y descripción y logo de la alianza DIP.
+- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa) correo corporativo, y logo de DIP.
 - El formulario de contacto es solo visual; no envía datos.
 - El logo es una reconstrucción vectorial a partir de una imagen de baja resolución.
