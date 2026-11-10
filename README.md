@@ -30,6 +30,6 @@ Settings → Pages → Deploy from a branch → `main` / `(root)`.
 ## Notas
 
 - Los efectos de scroll usan `animation-timeline` (Chrome y Edge). En otros navegadores el contenido se ve completo, sin esas animaciones.
-- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa), correo corporativo y enlaces reales de WhatsApp, LinkedIn y artículo MDPI.
+- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa), correo corporativo y enlaces reales de WhatsApp y del artículo MDPI.
 - El formulario de contacto es solo visual; no envía datos.
 - El logo es una reconstrucción vectorial a partir de una imagen de baja resolución.
