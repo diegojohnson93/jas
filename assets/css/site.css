@@ -150,3 +150,19 @@ details>summary:hover .tt{transform:translateX(14px);color:#184078}
 .case.bw:hover::before{opacity:.45}
 [id]{scroll-margin-top:88px}
 
+
+/* Portada: curvas de nivel */
+.hc-wrap{position:absolute;inset:0;overflow:hidden}
+.hc-svg{position:absolute;left:0;top:0;width:100%;min-width:1440px;height:auto;display:block}
+.hc-sh{position:absolute;inset:0;background:linear-gradient(to right,rgba(24,64,120,.9),rgba(24,64,120,.35) 55%,rgba(24,64,120,0))}
+.ct{fill:none;stroke:#8FA6CB;stroke-width:1;opacity:.5;vector-effect:non-scaling-stroke}
+.ct.ix{stroke:#CFC6B4;opacity:.85}
+.hc-pt{position:absolute;right:5%;top:27%;display:flex;align-items:center;gap:10px;color:#C9D3E4}
+.hc-pt i{width:9px;height:9px;background:#CFC6B4;display:block}
+@media (prefers-reduced-motion:no-preference){
+.hc-svg{animation:hcd 34s ease-in-out infinite alternate}
+@keyframes hcd{from{transform:scale(1.04)}to{transform:scale(1.2) translate(-2%,-2%)}}
+.ct{stroke-dasharray:9000;stroke-dashoffset:9000;animation:draw 6s .2s ease-out forwards}
+.hc-pt i{animation:pulse 2.4s 2s ease-in-out infinite}
+}
+@media (max-width:700px){.hc-pt{display:none}}
