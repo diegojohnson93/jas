@@ -3,6 +3,8 @@
 Demo estática del rediseño de [jasperitajes.cl](https://jasperitajes.cl/): home y página de Experiencia.
 HTML, CSS y JavaScript puros, sin dependencias ni proceso de build.
 
+Demo publicada: https://diegojohnson93.github.io/jas/
+
 ## Estructura
 
 ```
