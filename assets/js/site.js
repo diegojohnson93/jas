@@ -94,3 +94,28 @@ new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).obse
 size();
 if (reduce) { depth = 0; draw(); } else { requestAnimationFrame(frame); }
 })();
+
+// Enfoque: la frase se escribe sola al entrar en pantalla
+(function () {
+var el = document.querySelector('.ty');
+if (!el || !window.IntersectionObserver) { return; }
+if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+var full = el.textContent, MS = 14;
+var a = document.createElement('span'), b = document.createElement('span');
+a.className = 'ty-a'; b.className = 'ty-b';
+a.setAttribute('aria-hidden', 'true'); b.setAttribute('aria-hidden', 'true');
+if (el.parentNode) { el.parentNode.setAttribute('aria-label', full); }
+el.textContent = ''; b.textContent = full; el.appendChild(a); el.appendChild(b);
+var io = new IntersectionObserver(function (es) {
+if (!es[0].isIntersecting) { return; }
+io.disconnect();
+var t0 = performance.now();
+var step = function (now) {
+var n = Math.min(full.length, Math.floor((now - t0) / MS));
+a.textContent = full.slice(0, n); b.textContent = full.slice(n);
+if (n < full.length) { requestAnimationFrame(step); } else { setTimeout(function () { a.className = 'ty-a done'; }, 1800); }
+};
+requestAnimationFrame(step);
+}, { threshold: 0.35 });
+io.observe(el);
+})();
