@@ -198,3 +198,6 @@ form.tried input:invalid{border-bottom-color:#B3261E !important}
 .pr-ar{font-size:48px;font-weight:300;color:#62BFB4}
 .st-sep{width:1px;align-self:stretch;background:#3A3C40}
 @media (max-width:700px){.st-sep{display:none}}
+.jb-q2,.jb-a2{box-sizing:border-box}
+.jb-a2{margin-left:56px;margin-right:6%}
+@media (max-width:900px){.jb-a2{margin-left:0;margin-right:8%}}
