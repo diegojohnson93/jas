@@ -31,6 +31,6 @@ Settings → Pages → Deploy from a branch → `main` / `(root)`.
 ## Notas
 
 - Los efectos de scroll usan `animation-timeline` (Chrome y Edge). En otros navegadores el contenido se ve completo, sin esas animaciones.
-- Pendiente de contenido: fotos de dos casos (Suzuval El Salto y caída de losa) y correo corporativo.
+- Pendiente de contenido: correo corporativo. Suzuval El Salto y la caída de losa van sin foto por ahora.
 - El formulario de contacto es solo visual; no envía datos.
 - El logo es una reconstrucción vectorial a partir de una imagen de baja resolución.
