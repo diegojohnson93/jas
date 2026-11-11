@@ -50,3 +50,36 @@ form.tried input:invalid{border-bottom-color:#B3261E !important}
 /* Formulario sobre turquesa */
 #contacto input:focus,#contacto select:focus,#contacto textarea:focus{outline:none;border-bottom-color:#F5F6F5}
 #contacto .lb::before{background:#1C1D1F}
+
+/* Servicios: torre BIM que se construye con el scroll */
+.tw{position:relative;display:flex;gap:48px;padding:0 24px}
+.tw-l{flex:1.15 1 0;position:sticky;top:var(--hh,68px);height:calc(100vh - var(--hh,68px));min-height:560px;align-self:flex-start;padding:16px 0 24px;box-sizing:border-box}
+.tw-vp{position:relative;width:100%;height:100%;border:1px solid #D3D6D6;background-color:#F5F6F5;background-image:radial-gradient(#C9CFCF 1px,transparent 1.2px);background-size:24px 24px;overflow:hidden}
+.tw-cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tw-hud{position:absolute;inset:0;pointer-events:none;font-size:11px;color:#1C1D1F}
+.tw-hud>div{position:absolute;display:flex;flex-direction:column;gap:6px}
+.tw-tl{top:20px;left:24px}
+.tw-tl span:first-child,.tw-pk{color:#5C5F63}
+.tw-st{color:#237A70}
+.tw-tr{top:20px;right:24px;align-items:flex-end;transition:opacity .4s}
+.tw-pct{font-family:'Inter Tight',sans-serif;font-weight:300;font-size:44px;line-height:1;letter-spacing:-.04em;color:#1C1D1F}
+.tw-bl{left:24px;bottom:20px;right:24px;flex-direction:row !important;align-items:center;gap:16px !important}
+.tw-bar{flex:1;height:1px;background:#C9CFCF;position:relative}
+.tw-bar i{position:absolute;left:0;top:0;height:1px;width:0;background:#62BFB4}
+.tw-rail{position:absolute;right:24px;top:50%;transform:translateY(-50%);list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.tw-rail li{display:flex;align-items:center;justify-content:flex-end;gap:8px;color:#9EA3A3;transition:color .4s}
+.tw-rail li::after{content:"";width:14px;height:1px;background:currentColor;transition:width .4s}
+.tw-rail li.on{color:#1C1D1F}
+.tw-rail li.on::after{width:28px;background:#62BFB4}
+.tw-r{flex:1 1 0}
+.tw-b{min-height:calc(100vh - 68px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;opacity:.2;transform:translateY(16px);transition:opacity .6s,transform .8s cubic-bezier(.2,.7,.1,1)}
+.tw-b.on{opacity:1;transform:none}
+.tw-li{margin:0;padding:0;list-style:none;width:100%;max-width:480px;border-bottom:1px solid #D3D6D6}
+.tw-li li{display:flex;gap:20px;padding:12px 0;border-top:1px solid #D3D6D6}
+@media (max-width:900px){
+.tw{display:block;padding:0 16px}
+.tw-l{height:52vh;min-height:0;z-index:3;background:#F5F6F5;padding:8px 0}
+.tw-b{min-height:85vh;justify-content:flex-start;padding-top:40px}
+.tw-pct{font-size:28px}
+.tw-rail{display:none}
+}
