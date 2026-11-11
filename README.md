@@ -5,12 +5,15 @@ HTML, CSS y JavaScript puros, sin dependencias ni proceso de build.
 
 Demo publicada: https://diegojohnson93.github.io/jas/
 
+Demo JAS Consultores: https://diegojohnson93.github.io/jas/consultores/
+
 ## Estructura
 
 ```
 index.html            Home
 experiencia.html      Los nueve proyectos, con ancla por caso
 contenido/            Contenido de ITO reservado para jasconsultores.cl
+consultores/          Sitio de JAS Consultores: Inicio, ITO, Peritajes, Experiencia y Contacto
 assets/css/site.css   Estilos y animaciones
 assets/js/site.js     Cursor que sigue al mouse
 assets/img/           Logo (SVG) y fotos
