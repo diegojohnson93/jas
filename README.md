@@ -10,7 +10,6 @@ Demo publicada: https://diegojohnson93.github.io/jas/
 ```
 index.html            Home
 experiencia.html      Los nueve proyectos, con ancla por caso
-alianza-dip.html      Alianza DIP y peritajes destacados
 contenido/            Contenido de ITO reservado para jasconsultores.cl
 assets/css/site.css   Estilos y animaciones
 assets/js/site.js     Cursor que sigue al mouse
