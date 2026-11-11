@@ -1,5 +1,7 @@
 // Menú móvil: tres rayas que abren un panel grafito desde arriba
 (function () {
+if (window.__nvMenu) { return; }
+window.__nvMenu = true;
 var bt = document.querySelector('.nv-bg'), ov = document.getElementById('nv-ov');
 if (!bt || !ov) { return; }
 var root = document.documentElement;

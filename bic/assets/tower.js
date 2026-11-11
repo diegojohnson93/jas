@@ -55,7 +55,7 @@ oy = Hh / 2 - (((WB + DB) * S - H) / 2) * s + 6;
 function target() {
 if (!blocks.length) { return 0; }
 var vh = window.innerHeight, b0 = blocks[0].getBoundingClientRect(), bh = b0.height || vh;
-var anc = window.innerWidth < 900 ? 0.92 : 0.62;
+var anc = window.innerWidth < 900 ? 0.8 : 0.62;
 return Math.max(0, Math.min(5, (vh * anc - b0.top) / bh));
 }
 function draw() {
