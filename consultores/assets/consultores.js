@@ -137,7 +137,7 @@ var cover = panel('0');
 requestAnimationFrame(function () { requestAnimationFrame(function () { cover.style.transform = 'translateY(100%)'; }); });
 setTimeout(function () { if (cover.parentNode) { cover.parentNode.removeChild(cover); } }, D + 100);
 }
-var links = document.querySelectorAll('a[href="contacto.html"], a[href="Consultores-Contacto.dc.html"]');
+var links = document.querySelectorAll('a[href="contacto.html"]');
 for (var i = 0; i < links.length; i++) {
 links[i].addEventListener('click', function (ev) {
 if (this.getAttribute('data-go') === '1') { this.removeAttribute('data-go'); return; }
@@ -148,6 +148,8 @@ var el = panel('-100%');
 requestAnimationFrame(function () { requestAnimationFrame(function () { el.style.transform = 'translateY(0)'; }); });
 try { sessionStorage.setItem('jas-to-contacto', '1'); } catch (e) {}
 setTimeout(function () { a.setAttribute('data-go', '1'); a.click(); }, D);
+// si por algún motivo no se cambió de página, se retira el panel
+setTimeout(function () { if (el.parentNode) { el.parentNode.removeChild(el); } try { sessionStorage.removeItem('jas-to-contacto'); } catch (e) {} }, D + 1500);
 });
 }
 window.addEventListener('pageshow', function (e) {
