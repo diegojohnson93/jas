@@ -118,3 +118,41 @@ if (window.IntersectionObserver) { new IntersectionObserver(function (es) { visi
 size();
 if (reduce) { amp = 0; draw(0); } else { requestAnimationFrame(frame); }
 })();
+
+// Transición a Contacto: un panel azul baja desde arriba, cubre la pantalla y luego revela la página
+(function () {
+var BLUE = '#184078', D = 650;
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function panel(from) {
+var el = document.createElement('div');
+el.setAttribute('aria-hidden', 'true');
+el.style.cssText = 'position:fixed;inset:0;z-index:200;background:' + BLUE + ';pointer-events:none;transform:translateY(' + from + ');transition:transform ' + D + 'ms cubic-bezier(.76,0,.24,1);will-change:transform';
+document.body.appendChild(el);
+return el;
+}
+var flag = false;
+try { flag = sessionStorage.getItem('jas-to-contacto') === '1'; sessionStorage.removeItem('jas-to-contacto'); } catch (e) {}
+if (flag && !reduce) {
+var cover = panel('0');
+requestAnimationFrame(function () { requestAnimationFrame(function () { cover.style.transform = 'translateY(100%)'; }); });
+setTimeout(function () { if (cover.parentNode) { cover.parentNode.removeChild(cover); } }, D + 100);
+}
+var links = document.querySelectorAll('a[href="contacto.html"], a[href="Consultores-Contacto.dc.html"]');
+for (var i = 0; i < links.length; i++) {
+links[i].addEventListener('click', function (ev) {
+if (this.getAttribute('data-go') === '1') { this.removeAttribute('data-go'); return; }
+if (reduce || ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.button) { return; }
+ev.preventDefault();
+var a = this;
+var el = panel('-100%');
+requestAnimationFrame(function () { requestAnimationFrame(function () { el.style.transform = 'translateY(0)'; }); });
+try { sessionStorage.setItem('jas-to-contacto', '1'); } catch (e) {}
+setTimeout(function () { a.setAttribute('data-go', '1'); a.click(); }, D);
+});
+}
+window.addEventListener('pageshow', function (e) {
+if (!e.persisted) { return; }
+var olds = document.querySelectorAll('div[aria-hidden="true"][style*="z-index:200"]');
+for (var k = 0; k < olds.length; k++) { olds[k].parentNode.removeChild(olds[k]); }
+});
+})();
