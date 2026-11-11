@@ -176,3 +176,8 @@ details>summary:hover .tt{transform:translateX(14px);color:#184078}
 .ty-a::after{content:"";position:absolute;width:3px;height:.95em;margin:.1em 0 0 4px;background:#184078;animation:tyb .6s steps(1) infinite}
 .ty-a.done::after{display:none}
 @keyframes tyb{50%{opacity:0}}
+
+/* Formularios: obligatorios */
+form.tried input:invalid{border-bottom-color:#F2B8B5 !important}
+.req{color:#CFC6B4}
+.form-msg{margin:14px 0 0;font-size:14px;color:#D5DDEA;min-height:1em}

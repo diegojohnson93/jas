@@ -119,3 +119,24 @@ requestAnimationFrame(step);
 }, { threshold: 0.35 });
 io.observe(el);
 })();
+
+// Formularios de contacto: campos obligatorios y aviso de demostración
+(function () {
+var forms = document.querySelectorAll('form[aria-label="Formulario de contacto"]');
+for (var i = 0; i < forms.length; i++) {
+(function (f) {
+f.addEventListener('invalid', function (ev) {
+f.classList.add('tried');
+var el = ev.target;
+if (el.validity && el.validity.valueMissing) { el.setCustomValidity('Este campo es obligatorio.'); }
+else if (el.validity && el.validity.typeMismatch) { el.setCustomValidity('Ingrese un correo válido.'); }
+}, true);
+f.addEventListener('input', function (ev) { if (ev.target.setCustomValidity) { ev.target.setCustomValidity(''); } });
+f.addEventListener('submit', function (ev) {
+ev.preventDefault();
+var m = f.querySelector('.form-msg');
+if (m) { m.textContent = 'Gracias. Esta es una demostración: el envío se conectará en el sitio final.'; }
+});
+})(forms[i]);
+}
+})();
